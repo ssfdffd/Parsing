@@ -667,11 +667,13 @@ footer {
     }
 
     .vm-cards {
-        flex-direction: column;
+		align-self: center;
+		     flex-direction: column;
         gap: 20px;
     }
 
     .vm-card {
+		align-self: center;
         width: 100%;
         min-width: unset;
     }
@@ -682,5 +684,6 @@ footer {
         font-size: 0.9rem;
     }
 }
+
 
 
