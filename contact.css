@@ -1,413 +1,142 @@
-/* --- Base Styles --- */
-* {
-    min-height : 100vh;
-    overflow-x : hidden;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* --- Navbar Styles (Desktop First) --- */
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Spreads logo and links */
-    padding: 10px 40px;
-    background-color: #000;
-}
-
-.logo {
-    height: 50px; /* Assuming your logo height */
-}
-
-/* Nav Links - Default (Desktop) is Horizontal */
-.nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px;
-}
-
-/* Menu Toggle (Hamburger Icon) - Hidden on Desktop */
-.menu-toggle {
-    display: none; /* Hidden by default on desktop */
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* --- Hero Section Styles --- */
-
-.hero {
-    padding: 50px 40px;
-    text-align: left;
-}
-
-.main-content h1 {
-    color: black /* Dark color for text */
-}
-
-/* --- Footer Styles --- */
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-}
-
-/* --- Mobile Styles (Applied when screen is 768px or less) --- */
-
-@media (max-width: 768px) {
-    /* Menu Toggle - Visible on Mobile */
-    .menu-toggle {
-        display: block;
-    }
-    
-    /* Nav Links - Hidden by default on Mobile */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #000;
-        position: absolute; /* Allows links to float over content */
-        top: 70px; /* Position below the navbar */
-        right: 20px;
-        width: 150px;
-        padding: 10px;
-        z-index: 10; /* Ensure it stays on top */
-    }
-
-    /* State when the button is clicked by JavaScript */
-    .nav-links.show {
-        display: flex; /* Show the vertical menu */
-    }
-}
-:root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #f8f9fa; /* Light Grey */
-    --bg-left: #343a40; /* Dark Grey */
-    --text-left: #ffffff; /* White */
-    --bg-right: #ffffff; /* White */
-    --text-right: #343a40; /* Dark Grey */
-    --hover-color: #0056b3; /* Darker Blue */
-    --transition-speed: 0.4s;
-}
-
-/* Base Styles */
+/* --- Base Reset --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Remove these completely: 
+   min-height: 100vh AND overflow hidden 
+*/
+
+/* --- Body --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden; /* Hide scrollbars on body */
+    overflow-x: hidden; /* allow vertical scrolling */
 }
 
-/* Container for the Split View */
+/* --- Navbar Styles --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- Split Container --- */
 .container {
     display: flex;
+    width: 100%;
     min-height: 100vh;
 }
 
 .split-side {
     flex: 1;
-    overflow-y: auto; /* Scrollable content within each side */
+    overflow-y: auto;
     padding: 40px;
-    transition: width var(--transition-speed) ease-in-out;
 }
 
-/* Left Side (Contact) Styling */
+/* LEFT SIDE */
 .left-side {
-    background-color: black);
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 .left-side .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding-top: 50px;
-}
-
-.contact-info {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .icon-link {
-    display: flex;
-    align-items: center;
-    gap: 15px;
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    padding: 10px 20px;
     border: 2px solid #ed51a1;
+    padding: 10px 20px;
     border-radius: 8px;
-    transition: background-color white, transform 0.2s;
+    color: white;
+    display: block;
+    margin-bottom: 20px;
 }
 
-.icon-link i {
-    font-size: 1.8rem;
-    width: 30px; /* Fixed width for consistent alignment */
-}
-
-.icon-link:hover {
-    background-color: grey
-    transform: translateX(5px);
-}
-
-/* Right Side (T&C) Styling */
+/* RIGHT SIDE */
 .right-side {
     background-color: black;
     color: #e68383;
 }
 
-.right-side .content {
-    padding-top: 50px;
-}
-
-/* Accordion Styling (Terms & Conditions) */
-.accordion {
-    margin-top: 40px;
-    border: 1px solid #9775eb;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.accordion-item {
-    border-bottom: 1px solid #dee2e6;
-}
-
-.accordion-item:last-child {
-    border-bottom: none;
-}
-
+/* Accordion */
 .accordion-header {
+    background-color: #f79494;
     width: 100%;
     padding: 20px;
-    background-color: #f79494;
-    color: var(--primary-color);
-    border: none;
-    text-align: left;
     cursor: pointer;
+    border: none;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s;
-}
-
-.accordion-header:hover {
-    background-color: #d694f7;
-}
-
-.term-title {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.toggle-icon {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-}
-
-/* Icon rotation for open state */
-.accordion-header.active .toggle-icon {
-    transform: rotate(180deg);
 }
 
 .accordion-content {
-    padding: 0 20px;
-    background-color: var(--bg-right);
-    max-height: 0; /* Key for the dropdown effect */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    transition: 0.3s ease;
 }
 
 .accordion-content.show {
-    max-height: 500px; /* Arbitrarily large value to ensure content fits */
+    max-height: 600px;
     padding: 20px;
 }
 
-.accordion-content p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #041524;
-}
-
-.download-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    transition: color 0.2s;
-}
-
-.download-link:hover {
-    color: var(--hover-color);
-}
-
-/* --- Dynamic & Animated Sections --- */
-
-/* Keyframe for simple fade-in/slide-up */
-@keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-in {
-    opacity: 0; /* Start hidden */
-    animation: fadeInSlideUp 0.6s ease-out forwards;
-}
-
-/* Delaying animations for a staggered effect */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-.delay-6 { animation-delay: 0.6s; }
-
-/* ------------------------------------------ */
-/*  EXTRA MOBILE SUPPORT FOR SMALL CELLPHONES */
-/* ------------------------------------------ */
-@media (max-width: 480px) {
-
-    /* General Body Fixes */
-    body {
-        overflow-x: hidden;
-    }
-
-    /* NAVBAR */
-    .navbar {
-        padding: 10px 20px;
-    }
-
-    .logo {
-        height: 40px;
-    }
+/* --- MOBILE FIXES --- */
+@media (max-width: 768px) {
 
     .menu-toggle {
         display: block;
     }
 
     .nav-links {
-        width: 100%;
-        right: 0;
-        top: 60px;
-        padding: 15px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 70px;
         background: black;
-        text-align: center;
+        width: 150px;
+        padding: 10px;
+        z-index: 10;
     }
 
-    .nav-links li a {
-        font-size: 14px;
-        padding: 10px 0;
+    .nav-links.show {
+        display: flex;
     }
 
-    /* HERO */
-    .hero {
-        padding: 30px 20px;
-        text-align: center;
-    }
-
-    .hero h1, 
-    .main-content h1 {
-        font-size: 1.8rem;
-    }
-
-    /* SPLIT SCREEN LAYOUT */
     .container {
         flex-direction: column;
-        height: auto;
+        min-height: auto;
     }
 
     .split-side {
         width: 100%;
-        height: auto;
-        padding: 25px;
-    }
-
-    /* LEFT SECTION */
-    .left-side .content {
-        padding-top: 20px;
-    }
-
-    .icon-link {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    .icon-link i {
-        font-size: 1.5rem;
-    }
-
-    /* RIGHT SECTION */
-    .right-side .content {
-        padding-top: 20px;
-    }
-
-    .accordion {
-        margin-top: 20px;
-    }
-
-    .accordion-header {
-        padding: 15px;
-        font-size: 1rem;
-    }
-
-    .accordion-content {
-        padding: 15px;
-    }
-
-    .accordion-content p {
-        font-size: 0.95rem;
-    }
-
-    /* FOOTER */
-    footer {
-        padding: 15px;
-        font-size: 0.9rem;
+        padding: 20px;
     }
 }
-@media (max-width: 768px) {
-    .split-side left-side {
-        dispay: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .content, .split-side right-side {
-        width: 100%;
-        margin: 0;
-        padding: 20px 10px;
-    }
-    .split-side right-side {
-        margin-top: 20px;
-    }
-    .content button{
-        width: 100%;
-    }
-}
-
