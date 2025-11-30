@@ -1,0 +1,288 @@
+/* --- Base Styles --- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Navbar Styles (Desktop First) --- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads logo and links */
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+.logo {
+    height: 50px; /* Assuming your logo height */
+}
+
+/* Nav Links - Default (Desktop) is Horizontal */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Menu Toggle (Hamburger Icon) - Hidden on Desktop */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- Hero Section Styles --- */
+
+.hero {
+    padding: 50px 40px;
+    text-align: left;
+}
+
+.main-content h1 {
+    color: black /* Dark color for text */
+}
+
+/* --- Footer Styles --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* --- Mobile Styles (Applied when screen is 768px or less) --- */
+
+@media (max-width: 768px) {
+    /* Menu Toggle - Visible on Mobile */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Nav Links - Hidden by default on Mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute; /* Allows links to float over content */
+        top: 70px; /* Position below the navbar */
+        right: 20px;
+        width: 150px;
+        padding: 10px;
+        z-index: 10; /* Ensure it stays on top */
+    }
+
+    /* State when the button is clicked by JavaScript */
+    .nav-links.show {
+        display: flex; /* Show the vertical menu */
+    }
+}
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #f8f9fa; /* Light Grey */
+    --bg-left: #343a40; /* Dark Grey */
+    --text-left: #ffffff; /* White */
+    --bg-right: #ffffff; /* White */
+    --text-right: #343a40; /* Dark Grey */
+    --hover-color: #0056b3; /* Darker Blue */
+    --transition-speed: 0.4s;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Hide scrollbars on body */
+}
+
+/* Container for the Split View */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.split-side {
+    flex: 1;
+    overflow-y: auto; /* Scrollable content within each side */
+    padding: 40px;
+    transition: width var(--transition-speed) ease-in-out;
+}
+
+/* Left Side (Contact) Styling */
+.left-side {
+    background-color: black);
+    color: black;
+}
+
+.left-side .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.contact-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid #ed51a1;
+    border-radius: 8px;
+    transition: background-color white, transform 0.2s;
+}
+
+.icon-link i {
+    font-size: 1.8rem;
+    width: 30px; /* Fixed width for consistent alignment */
+}
+
+.icon-link:hover {
+    background-color: grey
+    transform: translateX(5px);
+}
+
+/* Right Side (T&C) Styling */
+.right-side {
+    background-color: black;
+    color: #e68383;
+}
+
+.right-side .content {
+    padding-top: 50px;
+}
+
+/* Accordion Styling (Terms & Conditions) */
+.accordion {
+    margin-top: 40px;
+    border: 1px solid #9775eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    background-color: #f79494;
+    color: var(--primary-color);
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.accordion-header:hover {
+    background-color: #d694f7;
+}
+
+.term-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.toggle-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Icon rotation for open state */
+.accordion-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0 20px;
+    background-color: var(--bg-right);
+    max-height: 0; /* Key for the dropdown effect */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content.show {
+    max-height: 500px; /* Arbitrarily large value to ensure content fits */
+    padding: 20px;
+}
+
+.accordion-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #041524;
+}
+
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.download-link:hover {
+    color: var(--hover-color);
+}
+
+/* --- Dynamic & Animated Sections --- */
+
+/* Keyframe for simple fade-in/slide-up */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    opacity: 0; /* Start hidden */
+    animation: fadeInSlideUp 0.6s ease-out forwards;
+}
+
+/* Delaying animations for a staggered effect */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

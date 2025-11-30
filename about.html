@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing</title>
+    <link rel="stylesheet" href="about.css"/>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const toggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            // Check if elements exist before adding listener
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                });
+            }
+        });
+		
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="parsinglogo.jpg" href ="index.html"  alt="Parsing logo" class="logo">
+            
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="about.html">About Parsing</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+	 <section class="hero">
+        <div class="hero-text">
+            <h1>About Us</h1>
+            <p>We design, develop, and build beautiful, high-performance websites for brands that want to stand out.</p>
+        </div>
+    </section>
+	<section class="back">
+	<div class="about">
+	<div class="class-img">
+	<img src="founder.jpeg" alt="Parsing Founder" >
+	</div>
+	<div class="about-content">
+	<h2>Buhle Manyike<span> Founder & Lead Developer</span></h2>
+	<p>  Buhle is a passionate full-stack web developer with a vision to transform ideas into beautiful, functional websites. She ensures every client receives a the best service.The founder makes sure that Parsing can provide high quality service, custom software and innnovative ways to work with her clients.</p>
+	</div> 
+	
+	</div>
+	
+	
+	
+	
+	
+	<section class="vision-mission-section" id="vm-container">
+    <div class="vm-container">
+        <h2 class="vm-title">Our Vision & Mission</h2>
+
+        <div class="vm-cards">
+
+            <div class="vm-card">
+                <h3>Our Vision</h3>
+                <p>
+To become a leading tech company in South Africa that empowers businesses with modern, high-quality digital experiences to inspire, connect, and elevate brands around South Africa
+                </p>
+            </div>
+
+            <div class="vm-card">
+                <h3>Our Mission</h3>
+                <p>The mission is to design and develop beautiful, responsive, and user-friendly websites that help businesses grow. We combine creativity, innovation, and technology to deliver digital solutions that are modern, impactful, and tailored to each client’s unique needs.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+	
+	
+	<section class="values">
+        <h2>Our Core Values</h2>
+        <div class="value-container">
+            <div class="value-box fade-in">
+                <h3>Creativity</h3>
+                <p>We make websites that stand out and help you reimagine the digital landscape.</p>
+            </div>
+
+            <div class="value-box fade-in">
+                <h3>Innovation</h3>
+                <p>We use the latest technology and designs that push boundaries.</p>
+            </div>
+
+            <div class="value-box fade-in">
+                <h3>Quality</h3>
+                <p>We deliver polished websites built with precision and care.</p>
+            </div>
+        </div>
+    </section>
+	</section>
+	
+	
+	
+	
+	
+	
+	 <footer>
+        <p>&copy; 2025 Parsing. All Rights Reserved.</p>
+    </footer>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll('.value-box');
+
+    function reveal() {
+        boxes.forEach(box => {
+            const pos = box.getBoundingClientRect().top;
+            if (pos < window.innerHeight - 100) {
+                box.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+});
+</script>
+</html>

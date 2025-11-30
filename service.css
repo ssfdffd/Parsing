@@ -1,0 +1,214 @@
+/* --- Base Styles --- */
+
+/body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/*---body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a2e; /* Deep blue/purple dark background */
+           /* color: #e0e0e0; /* Light gray text */
+            /*padding: 40px 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        } ---*/
+
+        .price-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #0f0f1b; /* Slightly darker inner background */
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Heading Styles - Accent Color (Gold/Red for contrast) */
+        h1, h2 {
+            color: #c911d6; /* Gold accent color */
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 204, 0, 0.3);
+            padding-bottom: 15px;
+        }
+        h3 {
+            color: #d97eb7; /* Soft red for the analysis section */
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* List and Item Styling */
+        .price-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            /* Smooth Dynamic Effect (Animation) */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Hover Effect */
+        .price-item:hover {
+            background-color: #ffbdd9; 
+            border: 1px solid #a257b3;
+            transform: translateY(-2px); /* Subtle lift */
+            cursor: pointer;
+        }
+
+        .price-label {
+            flex-grow: 1;
+            font-weight: 300;
+        }
+
+        .price-value {
+            font-weight: 600;
+            color: #ff00b3;
+            text-align: right;
+            min-width: 100px;
+            font-size: 1.1em;
+        }
+
+        /* Specific styles for the two-column Web-Design section */
+        .web-design-item .price-value {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            min-width: 200px;
+        }
+        .web-design-item .price-value span {
+            width: auto;
+            text-align: right;
+        }
+
+        .note {
+            font-size: 0.8em;
+            color: #aaa;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        /* Business Analysis Section Layout */
+        .business-analysis {
+            background-color: #ffcba5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .business-analysis-list .price-item:hover {
+            border: 1px solid white;
+            background-color: rgba(255, 102, 102, 0.05);
+        }
+        .business-analysis-list .price-value {
+            color: #ffcba5;
+        }
+
+
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed #333;
+            font-size: 1em;
+            color: #999;
+        }
+        .contact-info strong {
+            color: #e0e0e0;
+        }
+
+/* --- Navbar Styles (Desktop First) --- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads logo and links */
+    padding: 10px 40px;
+    background-color: #000;
+}
+
+.logo {
+    height: 50px; /* Assuming your logo height */
+}
+
+/* Nav Links - Default (Desktop) is Horizontal */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Menu Toggle (Hamburger Icon) - Hidden on Desktop */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- Hero Section Styles --- */
+
+.hero {
+    padding: 50px 40px;
+    text-align: left;
+}
+
+.main-content h1 {
+    color: black /* Dark color for text */
+}
+
+/* --- Footer Styles --- */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* --- Mobile Styles (Applied when screen is 768px or less) --- */
+
+@media (max-width: 768px) {
+    /* Menu Toggle - Visible on Mobile */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Nav Links - Hidden by default on Mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute; /* Allows links to float over content */
+        top: 70px; /* Position below the navbar */
+        right: 20px;
+        width: 150px;
+        padding: 10px;
+        z-index: 10; /* Ensure it stays on top */
+    }
+
+    /* State when the button is clicked by JavaScript */
+    .nav-links.show {
+        display: flex; /* Show the vertical menu */
+    }
+}
