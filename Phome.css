@@ -195,4 +195,99 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #f03e97;
+
+}
+
+/* --- Extra Mobile Support for Cellphones (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    body {
+        overflow-x: hidden; /* Stops sideways scrolling on small phones */
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 40px; /* Smaller logo for phones */
+    }
+
+    /* Dropdown menu tweaks */
+    .nav-links {
+        width: 100%;
+        right: 0;
+        top: 60px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    /* Hero section */
+    .hero {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Main section */
+    .main {
+        padding: 30px 20px;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+        padding: 30px 20px;
+    }
+
+    .why-choose-us .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .why-choose-us .left-content,
+    .why-choose-us .right-content {
+        width: 100%;
+        min-width: unset;
+        padding: 15px;
+    }
+
+    .why-choose-us h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .why-choose-us p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .feature-image {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Dynamic button */
+    .dynamic-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
 }
