@@ -20,6 +20,22 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const toggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            
+            // Check if elements exist before adding listener
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                });
+            }
+        });
+    </script>
+
+		
     </header>
 	<li class="price-item web-design-item">
             <span class="price-label">Regular Web-Design Prices (For static and dynamic websites) <span class="note"></span></span>
@@ -101,4 +117,5 @@
         <p>&copy; 2025 Parsing. All Rights Reserved.</p>
     </footer>
 	</body>
+
 </html>
