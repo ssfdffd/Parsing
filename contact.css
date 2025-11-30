@@ -120,7 +120,7 @@ body {
         position: absolute;
         right: 20px;
         top: 70px;
-        background: black;
+        background: white;
         width: 150px;
         padding: 10px;
         z-index: 10;
@@ -140,4 +140,5 @@ body {
         padding: 20px;
     }
 }
+
 
