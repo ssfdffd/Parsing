@@ -1,5 +1,8 @@
 /* --- Base Styles --- */
-
+* {
+    min-height : 100vh;
+    overflow-x : hidden;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -114,7 +117,7 @@ body {
 /* Container for the Split View */
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .split-side {
@@ -407,3 +410,4 @@ body {
         width: 100%;
     }
 }
+
