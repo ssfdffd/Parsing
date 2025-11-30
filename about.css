@@ -358,3 +358,329 @@ footer {
     from { text-shadow: 0 0 15px #00eaff; }
     to   { text-shadow: 0 0 30px #00eaff; }
 }
+
+
+
+/* ANIMATIONS */
+@keyframes fadeSlide {
+    from { opacity: 3; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+/*
+ * .about container styles - Handles overall spacing and Flexbox alignment
+ */
+.about {
+    /* min-height: 100vh; was removed or changed to 'auto' to fix the huge vertical gap */
+    min-height: auto; 
+    
+    /* Padding adjusted for less vertical gap while maintaining horizontal space */
+    padding: 3rem 9%; 
+    
+    /* Flexbox setup to put content and image side-by-side */
+    display: flex;
+    align-items: center; /* Vertically centers the content columns */
+    gap: 3rem; /* Space between the image and text */
+}
+
+/*
+ * Image Container Styles - Controls the space the image takes up
+ */
+.class-img {
+    /* Gives the image container 1 part of the flex space (e.g., 33%) */
+    flex: 1; 
+    max-width: 40%; /* Ensures the image container doesn't get too wide */
+    text-align: center; /* Ensures the image is centered within its flex container */
+}
+
+/*
+ * About Image Styles - Controls the circular image appearance and size
+ */
+.about img {
+    border-radius: 50%;
+    /* Reduced from 32vw to 25vw to make the image smaller and better fit the text height */
+    width: 25vw; 
+    
+    position: relative; 
+    box-shadow: 0 0 25px solid #b74b4b;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+/* Hover effect on the image */
+.about img:hover {
+    /* The image hover style from your original code (lines 198-201 in 1000073448.jpg) */
+    /* Note: These properties might have been intended for a text element near the image, 
+       but keeping them here as per your original file structure. */
+    /* font-size: 1.8rem;  <-- Keeping your original hover styles */
+    /* font-weight: 500;   <-- Keeping your original hover styles */
+}
+
+
+/*
+ * Content Container Styles - Controls the space the text content takes up
+ */
+.about-content {
+    /* Gives the content container 2 parts of the flex space (e.g., 66%) */
+    flex: 2; 
+}
+
+
+/*
+ * Text Styling Fixes
+ */
+
+/* Style for the main content header H2 (The one that was too big) */
+.about .about-content h2 {
+    /* Reduced font-size from 6rem to 4rem for better fit and readability */
+    font-size: 4rem; 
+    font-weight: 700;
+    line-height: 1.2; /* Adjusted line-height slightly */
+    /* Your original span color */
+    color: #b74b4b; /* Assuming this is the color for the main h2/span based on context */
+}
+
+/* Style for the span inside H2 (e.g., "Founder & Lead Developer") */
+.about .about-content span {
+    color: #b74b4b; 
+}
+
+/* Style for H3 (Vision, Mission) */
+.about-content h3 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Style for Paragraphs */
+.about-content p {
+    color: white;
+    /* Other paragraph styles from your original code (margin/font-weight) */
+}
+/* Vision & Mission Section */
+.vision-mission-section {
+    width: 100%;
+    padding: 80px 0;
+    background: fuchsia;
+    color: white;
+    overflow: hidden;
+}
+/*#vm-container{
+	background-image: src('code.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 4rem;
+	color: white;
+}*/
+
+.vm-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.vm-title {
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: black;
+}
+
+/* Cards */
+.vm-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.vm-card {
+    background: black;
+    padding: 25px;
+    width: 45%;
+    min-width: 280px;
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    animation: cardPop 1.5s forwards ease;
+}
+
+.vm-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.vm-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Text */
+.vm-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #db81e3;
+}
+
+.vm-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardPop {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 15px #00eaff; }
+    to   { text-shadow: 0 0 30px #00eaff; }
+}
+
+/* --- EXTRA MOBILE SUPPORT FOR SMALL CELLPHONES (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+    /* Fix background gradient on phones */
+    body {
+        background: linear-gradient(to right, #292228, #4f4e59);
+        overflow-x: hidden; /* Prevent sideways scrolling */
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    /* Mobile dropdown menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+        right: 0;
+        top: 60px;
+        padding: 15px;
+        text-align: center;
+        background: black;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    /* VALUES SECTION */
+    .values {
+        padding: 50px 25px;
+    }
+
+    .value-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .value-box {
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .class-img {
+        max-width: 100%;
+    }
+
+    .about img {
+        width: 50vw;
+    }
+
+    .about-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-content h3 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    /* VISION & MISSION SECTION */
+    .vision-mission-section {
+        padding: 50px 20px;
+    }
+
+    .vm-title {
+        font-size: 1.8rem;
+    }
+
+    .vm-cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vm-card {
+        width: 100%;
+        min-width: unset;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+
