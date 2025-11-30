@@ -389,3 +389,21 @@ body {
         font-size: 0.9rem;
     }
 }
+@media (max-width: 768px) {
+    .split-side left-side {
+        dispay: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .content, .split-side right-side {
+        width: 100%;
+        margin: 0;
+        padding: 20px 10px;
+    }
+    .split-side right-side {
+        margin-top: 20px;
+    }
+    .content button{
+        width: 100%;
+    }
+}
