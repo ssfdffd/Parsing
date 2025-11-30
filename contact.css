@@ -81,13 +81,13 @@ body {
 
 /* RIGHT SIDE */
 .right-side {
-    background-color: white;
+    background-color: black;
     color: #e68383;
 }
 
 /* Accordion */
 .accordion-header {
-    background-color: white;
+    background-color: #f79494;
     width: 100%;
     padding: 20px;
     cursor: pointer;
