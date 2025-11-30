@@ -286,3 +286,106 @@ body {
 .delay-4 { animation-delay: 0.4s; }
 .delay-5 { animation-delay: 0.5s; }
 .delay-6 { animation-delay: 0.6s; }
+
+/* ------------------------------------------ */
+/*  EXTRA MOBILE SUPPORT FOR SMALL CELLPHONES */
+/* ------------------------------------------ */
+@media (max-width: 480px) {
+
+    /* General Body Fixes */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+        right: 0;
+        top: 60px;
+        padding: 15px;
+        background: black;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .hero h1, 
+    .main-content h1 {
+        font-size: 1.8rem;
+    }
+
+    /* SPLIT SCREEN LAYOUT */
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .split-side {
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+
+    /* LEFT SECTION */
+    .left-side .content {
+        padding-top: 20px;
+    }
+
+    .icon-link {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .icon-link i {
+        font-size: 1.5rem;
+    }
+
+    /* RIGHT SECTION */
+    .right-side .content {
+        padding-top: 20px;
+    }
+
+    .accordion {
+        margin-top: 20px;
+    }
+
+    .accordion-header {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .accordion-content {
+        padding: 15px;
+    }
+
+    .accordion-content p {
+        font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
