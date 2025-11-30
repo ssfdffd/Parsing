@@ -87,7 +87,7 @@ body {
 
 /* Accordion */
 .accordion-header {
-    background-color: #f79494;
+    background-color: white;
     width: 100%;
     padding: 20px;
     cursor: pointer;
@@ -140,6 +140,7 @@ body {
         padding: 20px;
     }
 }
+
 
 
 
