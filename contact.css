@@ -81,7 +81,7 @@ body {
 
 /* RIGHT SIDE */
 .right-side {
-    background-color: black;
+    background-color: white;
     color: #e68383;
 }
 
@@ -140,6 +140,7 @@ body {
         padding: 20px;
     }
 }
+
 
 
 
